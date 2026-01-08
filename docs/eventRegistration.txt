@@ -115,3 +115,20 @@ seederek letrehozasa
 php artisan make:seeder UserSeeder
 php artisan make:seeder EventSeeder 
 php artisan make:seeder RegistrationSeeder
+
+megirasa
+
+php artisan db:seed
+
+
+
+
+php artisan install:api
+
+routesokat elkezdeni megirni
+
+
+php artisan make:controller Api/RegistrationController --api --model=Registration
+php artisan make:controller Api/EventController --api --model=Event  
+php artisan make:controller Api/UserController --api --model=User  
+php artisan make:controller Api/AuthController --api   

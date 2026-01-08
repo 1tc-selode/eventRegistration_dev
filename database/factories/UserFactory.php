@@ -32,7 +32,7 @@ class UserFactory extends Factory
 
         return [
             'name' => $firstName . ' ' . $lastName,
-            'email' => strtolower(Str::asci($firstName) . '.' . Str::ascii($lastName)) . $randomNumber . '@events.hu',
+            'email' => strtolower(Str::ascii($firstName) . '.' . Str::ascii($lastName)) . $randomNumber . '@events.hu',
             'phone' => $faker->numerify('+36 ## ### ####'),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('jelszo123'),
