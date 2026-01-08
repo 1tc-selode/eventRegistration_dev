@@ -112,3 +112,6 @@ php artisan make:factory RegistrationFactory --model=Registration
 
 
 seederek letrehozasa
+php artisan make:seeder UserSeeder
+php artisan make:seeder EventSeeder 
+php artisan make:seeder RegistrationSeeder
