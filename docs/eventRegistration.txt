@@ -91,3 +91,24 @@ class User extends Authenticatable
 
 
 php artisan make:model Event -m 
+
+ezutan a registration is es megirni oket
+
+
+
+C:\xampp\htdocs\eventRegistration>php artisan migrate
+
+   WARN  The database 'event_registration' does not exist on the 'mysql' connection.  
+
+  Would you like to create it? (yes/no) [yes]
+❯ yes
+
+
+
+factoryk letrehozasa es megirasa, user event es registration
+
+php artisan make:factory EventFactory --model=Event
+php artisan make:factory RegistrationFactory --model=Registration
+
+
+seederek letrehozasa
