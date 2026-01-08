@@ -1,0 +1,24 @@
+Esemény jelentkezés 
+
+backend: eventRegistration
+
+database: event_registration
+
+users(id, name, email, phone, created_at, updated_at)
+events(id, title, description, date, location, max_attendees, created_at, updated_at)
+registrations(id, user_id, event_id, status, registered_at, created_at, updated_at)
+
+
+
+H:\>C:
+
+C:\>cd xampp
+
+C:\xampp>cd htdocs
+
+C:\xampp\htdocs>composer create-project laravel/laravel eventRegistration
+
+
+git init
+
+utana a .gitignore mappaba ki kell szedni a .env es /vendor mappat
