@@ -22,3 +22,72 @@ C:\xampp\htdocs>composer create-project laravel/laravel eventRegistration
 git init
 
 utana a .gitignore mappaba ki kell szedni a .env es /vendor mappat
+
+es akkor feltolteni gitre
+
+
+.env ->
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=event_registration
+DB_USERNAME=root
+DB_PASSWORD=
+
+
+
+config/app.php ->     'timezone' => 'Europe/Budapest',
+
+
+
+KAPCSOLD KI A VIRUSKERESOT
+
+sanctum: 
+composer require laravel/sanctum
+php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+
+user migracio:
+
+ Schema::create('users', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('phone')->nullable();
+            $table->boolean('is_admin')->default(false);
+            $table->string('password');
+            $table->softDeletes();
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
+
+
+user model:
+
+
+class User extends Authenticatable
+{
+    /** @use HasFactory<\Database\Factories\UserFactory> */
+    use HasFactory, Notifiable, SoftDeletes, HasApiTokens;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'name',
+        'email',
+        'password',
+        'phone',
+        'is_admin',
+    ];
+
+..
+}
+
+
+
+php artisan make:model Event -m 
