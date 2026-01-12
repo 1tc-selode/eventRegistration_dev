@@ -12,8 +12,8 @@ Route::get('/ping', function() {
     return response()->json(['message' => 'api mukodik'], 200);
 });
 
-Route::get('/register', [AuthController::class, 'register']);
-Route::get('/login', [AuthController::class, 'login']);
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
 
 //authenticated routes
 Route::middleware('auth:sanctum')->group(function () {
@@ -47,5 +47,5 @@ Route::middleware('auth:sanctum')->group(function () {
 
     Route::get('/me', [UserController::class, 'me']);
     Route::put('/me', [UserController::class, 'updateMe']);
-    Route::post('/logout', [UserController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });
