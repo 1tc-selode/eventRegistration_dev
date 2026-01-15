@@ -16,4 +16,21 @@ class Registration extends Model
         'status',
         'registered_at',
     ];
+
+    protected function casts(): array
+    {
+        return [
+            'registered_at' => 'datetime',
+        ];
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function event()
+    {
+        return $this->belongsTo(Event::class);
+    }
 }
